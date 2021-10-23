@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Net Bank</title>
+<link rel="SHORTCUT ICON" href="icon_net.jpg" />
+</head>
+<style>
+	  body{
+	  background-image:url("pay.png");
+	  background-size:cover;
+	  }
+      .mainheader{
+      background-color:#20B2AA;
+      width:100%;
+      }
+      .mynav{
+      display:inline-block;
+      width:100%;
+      text-align:right;
+      }
+      .item{
+      display:inline-block;
+      list-style:none;
+      padding:0;
+      }
+      .item a{
+      text-decoration:none;
+      color:white;
+      padding:20px 20px;
+      border-radius:50pt;
+      }
+      .item a:hover{
+      background-color:white;
+      color:red;
+      }
+       </style>
+
+<body>
+	<form name="frmNetBanking" >
+
+		<table width="100%">
+			<tr height="40px" id="img1">
+				<th><center>
+						<img src="netlo.jpg" height="100" width="642">
+					</center></th>
+			</tr>
+			<tr id="img2">
+				<th>
+				<header class="mainheader">
+				<nav class="mynav">
+				<ul class="item">
+				<li class="item"><a href="home.html" style="text-align:center;">Home</a></li>
+				<li class="item"><a href="signin.html">Register</a></li>
+				<li class="item"><a href="login.html">Login</a></li>
+				<li class="item"><a href="credit.html">Credit</a></li>
+				<li class="item"><a href="debit.html">Debit</a></li>
+				<li class="item"><a href="netbank.html">NetBank</a></li>
+				</ul>
+				</nav>
+			</header> 
+					<div class="abc" style="margin-left: 200px; margin-right: 600px;">
+						<center><br>
+							<table border="3" align="center" width="50%">
+								<div >
+								<tr>
+									<h1 style="text-align:center; color:red;"><font size="6px">Complete Your Payment </font><br></h1>
+								</tr>
+								</div>
+					            <div >
+						            <tr>
+						            	<td><font color="black" size="5px">Total amount to be paid: </font><br><br><br></td>
+						            </tr>
+									<tr>
+										<td><font color="black" size="5px">Select your bank: </font><br><br></td>
+									</tr>
+									<tr>
+										<td> 
+												<input name="bank" type="radio" value="sbi">State Bank of India<br><br><br>
+												<input name="bank" type="radio" value="hdfc">HDFC Bank<br><br><br>
+												<input name="bank" type="radio" value="icici">ICICI Bank<br><br><br>
+												<input name="bank" type="radio" value="axis">Axis Bank<br><br><br>
+												<input name="bank" type="radio" value="pnb">Punjab National Bank
+										</td>
+									</tr>
+									
+									
+									<tr align="center">
+										<th colspan="2" style="text-align: center"><br><input type="submit" value="Pay"
+											style="background-color: #4CAF50; color: white; padding: 10px 10px;
+											width: 200px" />
+										</th>
+									</tr>
+									<tr>
+										<td><br><font color="black" size="4px">Other payment mode: </font></td>
+									</tr>
+									<tr>
+										<td> 
+												<a href=credit.html><font size="4px">Credit Card</font></a><br><br><br>
+												<a href="debit.html"><font size="4px">Debit Card</font></a><br>
+										</td>
+									</tr>
+									</tr>
+								</div>
+							</div>
+							</table>
+						</center>
+						</div> 
+
+					
+					</form>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	var Questions = new Array(
+		"1. Who was the first Indian woman to win the Miss World Title?",
+		"2. Who built the Jama Masjid?",
+		"3. Who was the first Indian woman in Space?",
+		"4. Who wrote the Indian National Anthem?",
+		"5. Who was the first Indian Scientist to win a Nobel Prize?",
+		"6. Who was the first President of India?",
+		"7. Who was the first Indian to win the Booker Prize?",
+		"8. The language spoken by the people by Pakistan is ?",
+		"9. The World Largest desert is ?",
+		"10. The metal whose salts are sensitive to light is ?",
+		"11. The Central Rice Research Station is situated in ?",
+		"12. Country that has the highest in Barley Production ?",
+		"13. The headquarters of the coffee board of India is ?",
+		"14. The largest fresh water lake in India is ?",
+		"15. The chemical name of Chloroform is ?"
+				);
+	NoOfQuestions = Questions.length;
+	selectedAnswer=5;	
+	QuestionNo = 0;
+	marks=0;
+	Choosed = false;
+	Answers = new Array(NoOfQuestions);
+	for (var i = 0 ; i < NoOfQuestions ; i++)
+	{
+	    Answers[i] = new Array(4);
+	}
+	CorrectAnswers = new Array(NoOfQuestions);
+
+	Answers[0][0] = "Aishwarya Rai";
+	Answers[0][1] = "Sushmita Sen";
+	Answers[0][2] = "Reita Faria";
+	Answers[0][3] = "Diya Mirza";
+	CorrectAnswers[0] = 3;
+
+	Answers[1][0] = "Jahangir";
+	Answers[1][1] = "Akbar";
+	Answers[1][2] = "Imam Bukhari";
+	Answers[1][3] = "Shah Jahan";
+	CorrectAnswers[1] = 4;
+
+	
+	Answers[2][0] = "Kalpana Chawla";
+	Answers[2][1] = "Sunita Williams";
+	Answers[2][2] = "Koneru Humpy";
+	Answers[2][3] = "None of the above";
+	CorrectAnswers[2] = 1;
+
+	Answers[3][0] = "Bakim Chandra Chatterji";
+	Answers[3][1] = "Rabindranath Tagore";
+	Answers[3][2] = "Swami Vivekanand";
+	Answers[3][3] = "Mahatma Gandhi";
+	CorrectAnswers[3] = 2;
+
+	
+	Answers[4][0] = "CV Raman";
+	Answers[4][1] = "Amartya Sen";
+	Answers[4][2] ="Hargobind Khorana";
+	Answers[4][3] = "Subramanian Chrandrashekar";
+	CorrectAnswers[4] = 1;
+	
+	Answers[5][0] = "Abdul Kalam";
+	Answers[5][1] = "Lal Bahadur Shastri";
+	Answers[5][2] ="Dr. Rajendra Prasad";
+	Answers[5][3] = "Zakir Hussain";
+	CorrectAnswers[5] = 3;
+	
+	Answers[6][0] = "Dhan Gopal Mukerji";
+	Answers[6][1] = "Nirad C. Chaudhuri";
+	Answers[6][2] ="Arundhati Roy";
+	Answers[6][3] = "Aravind Adiga";
+	CorrectAnswers[6] = 3;
+	
+	Answers[7][0] ="Hindi";
+	Answers[7][1] = "Palauan";
+	Answers[7][2] ="Sindhi";
+	Answers[7][3] = "Nauruan";
+	CorrectAnswers[7] = 3;
+	
+	Answers[8][0] ="Thar";
+	Answers[8][1] = "Sahara";
+	Answers[8][2] ="Sonoran";
+	Answers[8][3] = "Kalahari";
+	CorrectAnswers[8] = 2;
+	
+	Answers[9][0] ="Zinc";
+	Answers[9][1] = "Silver";
+	Answers[9][2] ="Copper";
+	Answers[9][3] = "Aluminium";
+	CorrectAnswers[9] = 2;
+	
+	Answers[10][0] ="Chennai";
+	Answers[10][1] = "Bangalore";
+	Answers[10][2] ="Quilon";
+	Answers[10][3] = "Cuttack";
+	CorrectAnswers[10] = 4;
+	
+	Answers[11][0] ="India";
+	Answers[11][1] = "France";
+	Answers[11][2] ="Russia";
+	Answers[11][3] = "China";
+	CorrectAnswers[11] = 3;
+	
+	Answers[12][0] ="Mysore";
+	Answers[12][1] = "Bangalore";
+	Answers[12][2] ="Kolkata";
+	Answers[12][3] = "Cochin";
+	CorrectAnswers[12] = 2;
+	
+	Answers[13][0] ="Kolleru lake";
+	Answers[13][1] = "Chilka lake";
+	Answers[13][2] ="Pulicat lake";
+	Answers[13][3] = "Veeranam lake";
+	CorrectAnswers[13] = 1;
+	
+	Answers[14][0] ="Sulphuric acid";
+	Answers[14][1] = "Sodium Carbonate";
+	Answers[14][2] ="Sodium Chloride";
+	Answers[14][3] = "Trichloromethane";
+	CorrectAnswers[14] = 4;
+	
+	function NextQuestion() {
+		if (selectedAnswer==CorrectAnswers[QuestionNo]) {
+		//	alert("Correct " +selectedAnswer + "  " + CorrectAnswers[QuestionNo]);
+			marks++;
+		}
+		if (Choosed) {
+	   	if(QuestionNo < NoOfQuestions - 1)
+	   	{	
+	   		QuestionNo++;
+	   		loadQuestion();
+	   	}
+	   	else
+	   	{
+	   		alert("End of Examination \n"+"Marks Are : "+marks+"");
+	   	}
+
+	   	} else {
+			alert("you are not selected Any Option...")
+		 }
+	}
+	function PreviousQuestion(){
+		if(AnswerChoosed(Ans)==false){
+			marks--;
+		}
+		QuestionNo--;
+		   	if(QuestionNo < 0)
+		   	{	
+		   		alert("No More Questions Before this...");
+		   		QuestionNo=0;
+		   	}
+		   	loadQuestion();
+		}
+	function AnswerChoosed(Ans) {
+		selectedAnswer=Ans;
+		Choosed=true;
+	}
+	
+	function loadQuestion() {
+		document.getElementById("Question").innerHTML=Questions[QuestionNo];
+		document.getElementById("Option0").innerHTML = "(a) " + Answers[QuestionNo][0];
+		document.getElementById("Option1").innerHTML = "(b) " + Answers[QuestionNo][1];
+		document.getElementById("Option2").innerHTML = "(c) " + Answers[QuestionNo][2];
+		document.getElementById("Option3").innerHTML = "(d) " + Answers[QuestionNo][3];		
+		document.getElementById("Opt1").checked = false;	
+		document.getElementById("Opt2").checked = false;	
+		document.getElementById("Opt3").checked = false;	
+		document.getElementById("Opt4").checked = false;
+		
+		selectedAnswer=5;	
+		Choosed=false;
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Online Exam</title>
+</head>
+<body onload="loadQuestion()" style="background-image:url(on.jpg); background-size:cover;">
+<p style="color: #00FF00;font-family: 'Algerian';font-size:60px;font-weight:bold; text-align:center;">Online Exam @ Mphasis</p>
+		<div style="background : none repeat scroll 0 0 #FF6347;border:5px solid gray;
+			    color : white; font-family : 'DejaVu Sans',Times,Serif;
+    font-weight : bold;
+    margin : 10px auto;
+    padding : 10px;
+    width : 400px;">
+		<br/><br/>
+			<form name = "ExamForm" id = "inputForm1" action = "" method = "GET">
+					<p id = "Question">
+						This is the question
+					</p>
+				
+					<input type = "radio" name = "OptionR" id = "Opt1" onClick = "AnswerChoosed(1)"/>
+					<label id = "Option0" name = "Name1" >1st Option</label><br />
+					<input type = "radio" name = "OptionR" id = "Opt2" onClick = "AnswerChoosed(2)"/> 
+					<label id = "Option1">2nd Option</label><br />
+					<input type = "radio" name = "OptionR" id = "Opt3" onClick = "AnswerChoosed(3)"/> 
+					<label id = "Option2">3rd Option</label><br />
+					<input type = "radio" name = "OptionR" id = "Opt4" onClick = "AnswerChoosed(4)"/> 
+					<label id = "Option3">4th Option</label><br />
+					<br />
+					<br />
+					<input type = "button" value = "Next" onClick = "NextQuestion()">
+				    <input type = "button" value = "Previous" onClick = "PreviousQuestion()">
+			</form>		
+		</div>
+</body>
+</html>

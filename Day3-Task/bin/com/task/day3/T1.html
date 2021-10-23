@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Stock</title>
+<script>
+function show()
+{
+	if (frmData.stock.value=="") {
+		document.getElementById("stockid").innerHTML="Please Enter Stockid...";
+		return;
+	} else {
+		document.getElementById("stockid").innerHTML="";
+	}
+	if (frmData.itemN.value=="") {
+		document.getElementById("itemn").innerHTML="Please Enter Item Name...";
+		return;
+	} else {
+		document.getElementById("itemn").innerHTML="";
+	}
+	if (frmData.quantity.value=="") {
+		document.getElementById("quant").innerHTML="Please Enter Quantity...";
+		return;
+	}
+	else {
+		document.getElementById("quant").innerHTML="";
+	}
+	if(frmData.quantity.value<=10)
+	{
+		alert("enter quantity more than 100...");
+	}
+	else {
+		document.getElementById("quant").innerHTML="";
+	}
+	if(frmData.quantity.value>=1000)
+	{
+		alert("enter quantity less than 1000...");
+	}
+	else {
+		document.getElementById("quant").innerHTML="";
+	}
+	if (frmData.itemD.value=="") {
+		document.getElementById("itemd").innerHTML="Please Enter Item Description...";
+		return;
+	} else {
+		document.getElementById("itemd").innerHTML="";
+	}
+	if (frmData.zipcode.value=="") {
+		document.getElementById("zip").innerHTML="Please Enter Zipcode...";
+		return;
+	} else {
+		document.getElementById("zip").innerHTML="";
+	}
+}
+</script>
+</head>
+<body>
+	<form name="frmData">
+		<table border="3" align="center">
+		<tr>
+		<th colspan="2">
+		Stock Exchange
+		</th>
+		</tr>
+		<tr>
+		<th>Stock id</th>
+		<td>
+		<input type="text" name="stock" required="required">
+		<span id="stockid" style="color:blue;"></span>
+		</td>
+		</tr>
+		<tr>
+		<th>Item Name</th>
+		<td>
+		<input type="text" name="itemN" required="required">
+		<span id="itemn" style="color:blue;"></span>
+		</td>
+		</tr>
+		<tr>
+        <th>Quantity Available</th> 
+        <td>
+        <input type="number" name="quantity" required="required" />
+        <span id="quant" style="color:blue;" onclick="show()"></span>
+        </td>
+        </tr>
+        <tr>
+        <th>Item Description</th>
+        <td>
+        <input type="text" name="itemD" required="required">
+        <span id="itemd" style="color:blue;"></span>
+        </td>
+        </tr>
+        <tr>
+        <th>City</th>
+        <td>
+        <select>
+        <option>select city</option>
+        <option value="Hyderabad">Hyderabad</option>
+		<option value="Mysore">Mysore</option>
+		<option value="Bangalore">Bangalore</option>
+		<option value="Chennai">Chennai</option>
+		<option value="Pune">Pune</option>
+		</td>
+        </select>
+        </tr>
+        <tr>
+        <th>Zipcode</th>
+        <td><input type="text" name="zipcode" pattern="[0-9]{6}" required>
+        <span id="zip" style="color:blue"></span>
+        </td>
+        </tr>
+        <tr>
+		<th colspan="2">
+					<input type="submit" value="show" onclick="show()" /> 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="reset" value="Reset" />
+				</th>
+			</tr>
+        </table>
+    </form>
+</body>
+</html>

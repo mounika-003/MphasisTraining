@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function show() {
+        	if (frmLeaveForm.leaveStartDate.value=="") {
+        		document.getElementById("errStartDate").innerHTML="Please Enter start date...";
+        		return;
+        	} else {
+        		document.getElementById("errStartDate").innerHTML="";
+        }
+            var result = "";
+            result += "Employee Id : " + frmLeaveForm.leaveId.value + "<br/>";
+            result += "Manager Name : " + frmLeaveForm.managerName.value + "<br/>";
+            result += "Leave StartDate : " + frmLeaveForm.leaveStartDate.value + "<br/>";
+            result += "Leave EndDate : " + frmLeaveForm.leaveEndDate.value + "<br/>";
+            result += "No.of Days : " + frmLeaveForm.noOfDays.value + "<br/>";
+            result += "Leave Type : " + frmLeaveForm.leaveType.value + "<br/>";
+            result += "Leave Status : " + frmLeaveForm.leaveStatus.value + "<br/>";
+            result += "Applied On : " + frmLeaveForm.appliedOn.value + "<br/>";
+            result+= "Manager Comments : " + frmLeaveForm.managerComments.value;
+            document.getElementById("result").innerHTML = result;
+        }
+        function load() {
+            var today = new Date().toISOString().slice(0, 10);
+            frmLeaveForm.appliedOn.value = today;
+        }
+        function lsDateVal() {
+            var stdate = frmLeaveForm.leaveStartDate.value;
+            var today = new Date();
+            var diffInMs = Date.parse(stdate) - Date.parse(today);
+            var days = Math.ceil(diffInMs / 1000 / 60 / 60 / 24);
+            if (days < 0) {
+                document.getElementById("errStartDate").innerHTML = "Leave Start-Date Cannot be yesterday's Date...";
+                return;
+            } else {
+                document.getElementById("errStartDate").innerHTML = "";
+            }
+        }
+
+        function tat() {
+            var edate = frmLeaveForm.leaveEndDate.value;
+            var today = new Date();
+            var diffInMs = Date.parse(edate) - Date.parse(today);
+            var days = Math.ceil(diffInMs / 1000 / 60 / 60 / 24);
+            if (days < 0) {
+                document.getElementById("errEndDate").innerHTML = "Leave End-Date Cannot be yesterday's Date...";
+                return;
+            } else {
+                document.getElementById("errEndDate").innerHTML = "";
+            }
+
+            var stdate = frmLeaveForm.leaveStartDate.value;
+            var enddate = frmLeaveForm.leaveEndDate.value;
+            var diffInMs = Date.parse(enddate) - Date.parse(stdate);
+            var days = diffInMs / 1000 / 60 / 60 / 24;
+            days++;
+            if (days <= 0) {
+                document.getElementById("errEndDate").innerHTML = "Leave Start-Date Cannot be greater Than Leave-End Date";
+                return;
+            } else {
+                document.getElementById("errEndDate").innerHTML = "";
+            }
+            
+            frmLeaveForm.noOfDays.value = days;
+        }
+    </script>
+    <meta charset="utf-8" />
+    <title>Leave Form</title>
+</head>
+<body onload="load()">
+    <form name="frmLeaveForm">
+        <table border="3" align="center">
+            <tr>
+                <th>Leave Id</th>
+                <td>
+                    <select name="leaveId" id="leaveid" >
+                        <option>Employ Leave Id</option>
+                        <option value="M-03">M-03</option>
+                        <option value="S-30">S-30</option>
+                        <option value="A-40">A-40</option>
+                        <option value="H-26">H-26</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Manager Name</th>
+                <td>
+                    <select id="managername" name="managerName">
+                        <option>Choose Your Manager</option>
+                        <option value="Pavan">Pavan</option>
+                        <option value="Srini">Srini</option>
+                        <option value="Shabbir">Shabbir</option>
+                    </select>
+                </td>
+                </tr>
+            <tr>
+                <th>Leave Start Date</th>
+                <td>
+                    <input type="date" name="leaveStartDate" onblur="lsDateVal()" />
+                    <span id="errStartDate" style="color:red"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Leave End Date</th>
+                <td>
+                    <input type="date" name="leaveEndDate" onblur="tat()" />
+                    <span id="errEndDate" style="color:red"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>No.of Days</th>
+                <td>
+                    <input type="number" name="noOfDays" readonly />
+                </td>
+            </tr>
+            <tr>
+                <th>Leave Type</th>
+                <td>
+                    <select name="leaveType">
+                    	<option>Select leave</option>
+                        <option value="EL">EL</option>
+                        <option value="PL">PL</option>
+                        <option value="ML">ML</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Leave Status</th>
+                <td>
+                    <select name="leaveStatus">
+                    	<option>Select status</option>
+                        <option value="PENDING">PENDING</option>
+                        <option value="APPROVED">APPROVE</option>
+                        <option value="REJECTED">REJECTED</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Leave Applied On</th>
+                <td>
+                    <input type="text" readonly name="appliedOn" id="dat" />
+
+                </td>
+            </tr>
+            <tr>
+                <th>Manager Comments</th>
+                <td>
+                    <input type="text" name="managerComments" />
+                    <span id="managercomment" style="color:red"></span>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="button" value="Submit" onclick="show()" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="Reset" />
+                </th>
+            </tr>
+
+        </table>
+    </form>
+    <span id="result">
+
+    </span>
+</body>
+</html>

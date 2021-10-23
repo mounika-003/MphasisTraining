@@ -1,0 +1,191 @@
+.bgimg{
+	background-image:url("mp.jpg");
+	background-size:100% 100%;
+	background-attachment:fixed;
+	width:1519px;
+	height:800px;
+}
+.row{
+	margin-left:-15px;
+	margin-right:-15px;
+}
+.headerset{
+	padding-top:300px;
+	box-sizing:border-box;
+}
+.headerset h2{
+	font-size:42px;
+}
+.headerset h1{
+	font-size:62px;
+	font-weight:bold;
+}
+.about1{
+	padding:80px 0px 60px;
+}
+.service{
+	padding:80px 0px 60px;
+}
+.service set{
+	border:1px solid #f08a5d;
+}
+.imgsetting{
+	margin:80px 0px;
+}
+.imgsetting button{
+	margin-top:20px;
+}
+.work{
+	padding:0;
+	margin:0;
+	min-height:316px;
+	background-color:#204051;
+	background-repeat:no-repeat;
+	width:100%;
+	background-size:cover;
+}
+.work h3{
+	padding-top:20px;
+	margin:0;
+	font-size:42px;
+	font-weight:600;
+}
+.work .box{
+	margin-right:52px;
+	padding:0px,10px,20px,30px;
+	font-size:21px;
+	color:#fff;
+}
+.work .box p{
+	font-size:16px;
+	color:#fff;
+}
+.career{
+	padding:0;
+	margin:40px 0 0 0;
+	width:100%;
+	float:center;
+}
+.career h2{
+	padding:0;
+	margin:0;
+	font-size:42px;
+	font-weight:600;
+}
+.col-md-4,.col-lg-3,.col-md-4,.col-sm-6,.col-xs-12,.col-md-12,.col-md-6{
+	position:relative;
+	min-height:1px;
+	padding-left:15px;
+	padding-right:15px;
+}
+.career hr{
+	border:1px solid #f08a5d;
+}
+hr{
+	margin-top:20px;
+	margin-bottom:20px;
+	height:0;
+	box-sizing:content-box;
+}
+.career box{
+	margin-top:52px;
+	padding:0;
+	font-size:21px;
+}
+.img{
+	max-width:100%;
+	height:auto;
+}
+.career h4{
+	background:#f6efa6;
+	padding:10px;
+	text-align:center;
+	font-size:17px;
+	margin-top:0;
+}
+.books{
+	padding:0;
+	margin:100px 0 0 0;
+	width:100%;
+	float:center;
+}
+.books h2{
+	text-align:center;
+	font-size:36px;
+	font-weight:600;
+}
+p{
+	font-size:16px;
+	line-height:30px;
+}
+#client{
+	padding:20px 0 10px 0;
+	margin:40px 0 0 0;
+	width:100%;
+	background:#092532;
+}
+.contact-forms{
+	padding:0;
+	margin:30px 0px 30px 0px;
+	width:100%;
+	float:left;
+}
+.contact-forms h2{
+	padding:2px 0px 6px 0px;
+	margin:-12px 0px 0px 0px;
+	font-size:33px;
+	color:#000;
+	text-align:center;
+	font-weight:600;
+}
+.contact-forms p{
+	padding:1px 0px 0px 0px;
+	font-size:14px;
+}
+.fa{
+	display:inline-block;
+	font-size:inherit;
+	text-rendering:auto;
+}
+.contact-forms .send{
+	padding:0;
+	margin:0;
+	width:160px;
+	height:50px;
+	border:1px solid #fb5f5f;
+	line-height:35px;
+	color:#fff;
+	background:#fb5f5f;
+	font-size:14px;
+	text-align:cente;
+}
+.text{
+	text-align:center;
+}
+.head{
+	color:red;
+}
+h2{
+	font-size:36px;
+	line-height:48px;
+}
+#client .box{
+	padding:0;
+	margin:0;
+	width:100%;
+}
+#client p{
+	color:#fff;
+}
+#footer{
+	padding:10px;
+	color:#fff;
+	text-align:center;
+	background:#000;
+}
+.copyright{
+	padding:10px;
+	color:#fff;
+	text-align:center;
+	background:#000;
+}
